@@ -1,0 +1,1 @@
+/var/www/adminer.php

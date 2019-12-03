@@ -1,0 +1,77 @@
+/* CSS Stylesheet */
+
+.homepage-container {
+  margin: 12px 63px;
+}
+
+.title-container {
+  display: block;
+  width: 100%;
+}
+
+.title {
+  padding: 0 72px 0 0;
+}
+
+.title h2 {
+  font-size: 72px;
+  line-height: 38px;
+  text-align: right;
+  color: #215250;
+}
+
+.title h2 span {
+  font-size: 68px;
+  color: #EEE;
+}
+
+.sub-title {
+  margin-top: 42px;
+  padding-left: 36px;
+  font-size: 28px;
+  color: #6f9e9d;
+}
+
+.hero-banner {
+  overflow-y: hidden;
+  height: 360px;
+  margin: 23px -63px;
+}
+
+.hero-banner img {
+  width: 100%;
+}
+
+.skills-title {
+  padding-left: 12%;
+}
+
+.skills-list ul {
+  display: block;
+  margin: 12px auto 18px;
+  padding: 12px;
+  width: 88%;
+  text-align: center;
+  border: 2px solid #EEE;
+  border-radius: 18px;
+}
+
+.skills-list ul li {
+  display: inline-block;
+  margin: 6px 8px;
+  width: 100px;
+  height: 100px;
+  list-style: none;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.skills-list ul li img {
+  vertical-align: middle;
+  max-width: 88px;
+  max-height: 88px;
+}
