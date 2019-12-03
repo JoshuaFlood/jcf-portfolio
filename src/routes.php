@@ -12,3 +12,4 @@ $app->get('/portfolio', 'HomeController:portfolio');
 
 $app->get('/contact', 'HomeController:contact');
 
+$app->post('/contact', 'HomeController:contactsubmit');

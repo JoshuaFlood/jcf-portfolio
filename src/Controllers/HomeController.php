@@ -23,12 +23,44 @@ class HomeController
   {
     return $this->renderer->render($response, 'about.phtml', $args);
   }
+
   public function portfolio(Request $request, Response $response, array $args)
   {
     return $this->renderer->render($response, 'portfolio.phtml', $args);
   }
+
   public function contact(Request $request, Response $response, array $args)
   {
     return $this->renderer->render($response, 'contact.phtml', $args);
   }
+
+  public function contactSubmit(Request $request, Response $response, array $args)
+  {
+    // $args['error'] = "";
+    // $formData = $request->getParsedBody();
+    // var_dump($formData);
+    // $valid = $this->validateContactForm($formData);
+    // if(
+    //   $valid !== ""
+    // ) {
+    //   $args['error'] = $valid;
+    //   return $this->renderer->render($response, 'contact.phtml', $args);
+    // }
+    return $this->renderer->render($response, 'contact.phtml', $args);
+  }
+
+  public function validateContactForm()
+  {
+    // $this->validateContactName($name)
+    // && $this->validateContactEmail($email)
+    // && $this->validateContactTel($tel)
+    // && $this->validateContactMessage($message)
+    // && $this->validateContactHuman($human)
+    // && $this->validateContactRobot($robot)
+  }
+
+
+
+
+
 }
