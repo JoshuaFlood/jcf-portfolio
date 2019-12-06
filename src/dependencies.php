@@ -23,39 +23,8 @@ $container->set('renderer', function ($c) {
 });
 
 // view renderer
-$container->set('phpmailer', function ($c) {
-  $mail = new PHPMailer(true);
-  try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.joshuaflood.com';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'no-reply@joshuaflood.com';                     // SMTP username
-    $mail->Password   = 'thisshouldbestoredindotenv';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    $mail->Port       = 587;                                    // TCP port to connect to
-
-    //Recipients
-    $mail->setFrom('no-reply@joshuaflood.com', 'Mailer');
-    $mail->addAddress('info@joshuaflood.com', 'Joshua Flood');     // Add a recipient
-    $mail->addReplyTo($params['email'], $params['name']);
-
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Portfolio: ' . $params['name'] . ' used the contact form!';
-    $mail->Body    = $params['message'];
-    $mail->AltBody = strip_tags($params['message']);
-
-    $mail->send();
-    echo 'Message has been sent';
-    $mail->clearAddresses();
-  } catch (Exception $e) {
-    echo 'Mailer Error (' . htmlspecialchars($row['email']) . ') ' . $mail->ErrorInfo . '<br>';
-    $mail->smtp->reset();
-  }
-  // Redirect to contact page with error message added to params.
-  return new Slim\Views\PhpRenderer(__DIR__ . '/../templates');
+$container->set('mailer', function ($c) {
+  return new PHPMailer;
 });
 
 $container->set('mysql', function ($c) {
@@ -79,5 +48,6 @@ $container->set('mysql', function ($c) {
 
 $container->set('HomeController', function($c) {
   $renderer = $c->get('renderer');
-  return new App\Controllers\HomeController($renderer);
+  $mailer = $c->get('mailer');
+  return new App\Controllers\HomeController($renderer,$mailer);
 });

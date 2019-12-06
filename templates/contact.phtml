@@ -1,4 +1,8 @@
-<?php include __DIR__ . '/header.phtml'; ?>
+<?php
+include __DIR__ . '/header.phtml';
+
+$error = $_GET['errors'];
+?>
 
 <div class="contact-container">
 
@@ -14,22 +18,69 @@
   <div class="content-container">
     <div class="contact-form-container">
       <p>
-        Please fill out and submit the below form if you wish to get in
-        touch.
+        Please fill out and submit the below form if you wish to get in touch.
       </p>
+      <span class="contact-error">
+        <?php
+          if(array_key_exists('general', $error)) {
+            echo $error['general'];
+          }
+        ?>
+      </span>
       <form method="post" action="/contact">
+
         <label for="name">Name :</label>
         <input name="name" placeholder="Enter your name here">
+        <span class="contact-error">
+          <?php
+            if(array_key_exists('name', $error)) {
+              echo $error['name'];
+            }
+          ?>
+        </span>
+
         <label for="email">E-mail :</label>
         <input name="email" type="email" placeholder="Enter your e-mail here">
+        <span class="contact-error">
+          <?php
+            if(array_key_exists('email', $error)) {
+              echo $error['email'];
+            }
+          ?>
+        </span>
+
         <label for="tel">Telephone :</label>
         <input name="tel" type="tel" placeholder="Enter your phone number here">
+        <span class="contact-error">
+          <?php
+            if(array_key_exists('tel', $error)) {
+              echo $error['tel'];
+            }
+          ?>
+        </span>
+
         <label for="message">Message :</label>
         <textarea name="message"></textarea>
+        <span class="contact-error">
+          <?php
+            if(array_key_exists('message', $error)) {
+              echo $error['message'];
+            }
+          ?>
+        </span>
+
         <!-- generate random calculation in routes.php and render here. -->
         <label for="human">*What is 7+9? (Anti-spam)</label>
         <input name="human" placeholder="Enter the answer here">
-        <label for="roboto" hidden></label>
+        <span class="contact-error">
+          <?php
+            if(array_key_exists('human', $error)) {
+              echo $error['human'];
+            }
+          ?>
+        </span>
+
+        <label for="roboto" hidden>Roboto :</label>
         <input name="roboto" placeholder="Do not enter the answer here" hidden>
         <input id="submit" name="submit" type="submit" value="Submit">
       </form>
