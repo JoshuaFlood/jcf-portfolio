@@ -4,34 +4,6 @@
   margin: 12px 63px;
 }
 
-.title-container {
-  display: block;
-  width: 100%;
-}
-
-.title {
-  padding: 0 72px 0 0;
-}
-
-.title h2 {
-  font-size: 72px;
-  line-height: 38px;
-  text-align: right;
-  color: #215250;
-}
-
-.title h2 span {
-  font-size: 68px;
-  color: #EEE;
-}
-
-.sub-title {
-  margin-top: 42px;
-  padding-left: 36px;
-  font-size: 28px;
-  color: #6f9e9d;
-}
-
 .hero-banner {
   overflow-y: hidden;
   height: 360px;

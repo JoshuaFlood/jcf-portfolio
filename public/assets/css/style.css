@@ -178,7 +178,7 @@ label {
   font-size: 72px;
   line-height: 38px;
   text-align: right;
-  color: #215250;
+  color: #3F9E9B;
 }
 
 .title h2 span {
@@ -196,9 +196,4 @@ label {
 #copyright {
   padding-top: 23px;
   text-align: center;
-}
-
-.contact-form-container {
-  width: 420px;
-  margin: 0 auto;
 }

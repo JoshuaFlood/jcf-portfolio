@@ -1,0 +1,43 @@
+/* CSS Stylesheet */
+
+.contact-form-container {
+  margin: 23px auto 0;
+  padding: 12px 23px;
+  width: 740px;
+  border: 1px solid #222;
+  border-radius: 13px;
+}
+
+.contact-form-container p {
+  text-align: center;
+}
+
+.contact-form-container form {
+  margin-top: 36px;
+  border-top: 1px solid #222;
+  padding: 23px 0;
+}
+
+.contact-form-container form label {
+  width: 36%;
+  vertical-align: middle;
+  line-height: 2;
+}
+
+.contact-form-container form label[for="message"] {
+  vertical-align: top;
+}
+
+.contact-form-container form input,
+.contact-form-container form textarea {
+  margin-bottom: 23px;
+  padding-left: 8px;
+  width: 54%;
+  line-height: 2;
+}
+
+.contact-form-container form input#submit {
+  display: block;
+  margin: 0 auto;
+  width: 42%;
+}
