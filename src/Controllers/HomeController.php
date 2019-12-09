@@ -55,13 +55,10 @@ class HomeController
     if(count($args['error']) === 0) {
 
       // Set mailer params
-      $this->mailer->setFrom(trim($data['email']), trim($data['name']));
-      $this->mailer->addAddress('info@joshuaflood.com');
       $this->mailer->addReplyTo(trim($data['email']), trim($data['name']));
       $this->mailer->isHTML(true);
 
-      // Create message
-      $this->mailer->Subject = 'Portfolio contact from ' . trim($data['name']) . '.';
+      // Create HTML message
       $this->mailer->Body    = "
         <p>NEW PORTFOLIO CONTACT:</p>
         <h1>" . $data['name'] . " &lt; " . trim($data['email']) . " &gt;</h1>
@@ -72,6 +69,12 @@ class HomeController
         <small>" . $data['name'] . "</small>
         <small>" . $data['email'] . "</small>
         <small>" . $data['tel'] . "</small>";
+
+      // Create plain-text message
+      $this->mailer->AltBody    = "
+        NEW PORTFOLIO CONTACT:" . $data['name'] . ". " . trim($data['email']) .
+        " . Message: " . $data['message'] . " . Name: " . $data['name'] . " .
+        Email: " . $data['email'] . " . Telephone: " . $data['tel'] . " .";
 
       // Try sending mail
       if(!$this->mailer->send()) {

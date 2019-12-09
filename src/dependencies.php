@@ -8,9 +8,15 @@ $container->set('logger', function ($c) {
   $logger = new Monolog\Logger('jcf-portfolio');
   $logger->pushProcessor(new Monolog\Processor\UidProcessor());
   if (!empty(__DIR__ . '/../var/log/jcf-portfolio.error.log')) {
-    $logger->pushHandler(new Monolog\Handler\StreamHandler(__DIR__ . '/../var/log/slim-php-template.error.log', Monolog\Logger::DEBUG));
+    $logger->pushHandler(new Monolog\Handler\StreamHandler(
+      __DIR__ . '/../var/log/slim-php-template.error.log',
+      Monolog\Logger::DEBUG
+    ));
   } else {
-    $logger->pushHandler(new Monolog\Handler\ErrorLogHandler(0, Monolog\Logger::DEBUG, true, true));
+    $logger->pushHandler(new Monolog\Handler\ErrorLogHandler(
+      0,
+      Monolog\Logger::DEBUG, true, true
+    ));
   }
   return $logger;
 });
@@ -22,10 +28,13 @@ $container->set('renderer', function ($c) {
 
 // view renderer
 $container->set('mailer', function ($c) {
-  $mailer = new PHPMailer();
-  $mailer->SMTPDebug = 4;
-  $mailer->isSendmail();
-  return $mailer;
+  $mail = new PHPMailer;
+  $mail->From = "no-reply@joshuaflood.com";
+  $mail->FromName = "Joshua Flood Portfolio";
+  $mail->addAddress("info@joshuaflood.com", "Joshua Flood");
+  $mail->isHTML(true);
+  $mail->Subject = "Someone used your contact form!";
+  return $mail;
 });
 
 $container->set('mysql', function ($c) {
