@@ -85,7 +85,6 @@ class HomeController
           media links at the top of the page. Message: " . $this->mailer->ErrorInfo . ".";
         return $this->renderer->render($response, 'contact.phtml', $args);
       } else {
-        var_dump($this->mailer);
         // Redirect user to success page.
         return $this->renderer->render($response, 'contact-success.phtml', $args);
       }
