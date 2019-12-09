@@ -1,8 +1,6 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
 $container = $app->getContainer();
 
@@ -24,7 +22,10 @@ $container->set('renderer', function ($c) {
 
 // view renderer
 $container->set('mailer', function ($c) {
-  return new PHPMailer;
+  $mailer = new PHPMailer();
+  $mailer->SMTPDebug = 4;
+  $mailer->isSendmail();
+  return $mailer;
 });
 
 $container->set('mysql', function ($c) {

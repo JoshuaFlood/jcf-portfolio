@@ -50,8 +50,7 @@ class HomeController
     }
 
     // Validate contact form.
-    $args['error'] = validateContactForm($data);
-
+    $args['error'] = $this->validateContactForm($data);
     // Ensure no errors were found.
     if(count($args['error']) === 0) {
 
@@ -80,13 +79,18 @@ class HomeController
         // mail. This error should be logged using monolog.
         $args['error']['general'] = "We're having trouble with our mail servers
           at the moment.  Please try again later, or contact me using the social
-          media links at the top of the page.";
+          media links at the top of the page. Message: " . $this->mailer->ErrorInfo . ".";
         return $this->renderer->render($response, 'contact.phtml', $args);
+      } else {
+        var_dump($this->mailer);
+        // Redirect user to success page.
+        return $this->renderer->render($response, 'contact-success.phtml', $args);
       }
-
-      // Redirect user to success page.
-      return $this->renderer->render($response, 'contact-success.phtml', $args);
     }
+    $args['name'] = $data['name'];
+    $args['email'] = $data['email'];
+    $args['tel'] = $data['tel'];
+    $args['message'] = $data['message'];
     return $this->renderer->render($response, 'contact.phtml', $args);
   }
 
@@ -96,17 +100,17 @@ class HomeController
     // Validate name.
     if($data['name'] === "") {
       $error['name'] = "Please provide your full name!";
-    } else if(!validateName($data['name'])){
+    } else if(!$this->validateName($data['name'])){
       $error['name'] = "Please enter a valid name!";
     }
     // Validate e-mail.
     if($data['email'] === "") {
       $error['email'] = "Please provide an e-mail address.";
-    } else if(!validateEmail($data['email'])){
+    } else if(!$this->validateEmail($data['email'])){
       $error['email'] = "The e-mail address you entered is invalid!";
     }
     // Validate message.
-    if(count($data['message']) < 50) {
+    if(strlen($data['message']) < 50) {
       $error['message'] = "Please provide a message which contains at least 50 characters!";
     }
     // Validate Voight-Kampff test.

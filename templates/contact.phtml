@@ -1,9 +1,10 @@
 <?php
 include __DIR__ . '/header.phtml';
-
-$error = $_GET['errors'];
+$error = [];
+if(array_key_exists('error', $data)) {
+  $error = $data['error'];
+}
 ?>
-
 <div class="contact-container">
 
   <div class="title-container">
@@ -30,7 +31,7 @@ $error = $_GET['errors'];
       <form method="post" action="/contact">
 
         <label for="name">Name :</label>
-        <input name="name" placeholder="Enter your name here">
+        <input name="name" placeholder="Enter your name here" value="<?php if(array_key_exists('name', $data)) { echo $data['name']; }  ?>">
         <span class="contact-error">
           <?php
             if(array_key_exists('name', $error)) {
@@ -40,7 +41,7 @@ $error = $_GET['errors'];
         </span>
 
         <label for="email">E-mail :</label>
-        <input name="email" type="email" placeholder="Enter your e-mail here">
+        <input name="email" type="email" placeholder="Enter your e-mail here" value="<?php if(array_key_exists('email', $data)) { echo $data['email']; }  ?>">
         <span class="contact-error">
           <?php
             if(array_key_exists('email', $error)) {
@@ -50,7 +51,7 @@ $error = $_GET['errors'];
         </span>
 
         <label for="tel">Telephone :</label>
-        <input name="tel" type="tel" placeholder="Enter your phone number here">
+        <input name="tel" type="tel" placeholder="Enter your phone number here" value="<?php if(array_key_exists('tel', $data)) { echo $data['tel']; }  ?>">
         <span class="contact-error">
           <?php
             if(array_key_exists('tel', $error)) {
@@ -60,7 +61,13 @@ $error = $_GET['errors'];
         </span>
 
         <label for="message">Message :</label>
-        <textarea name="message"></textarea>
+        <textarea name="message">
+        <?php
+          if(array_key_exists('message', $data)) {
+            echo $data['message'];
+          }
+        ?>
+        </textarea>
         <span class="contact-error">
           <?php
             if(array_key_exists('message', $error)) {
