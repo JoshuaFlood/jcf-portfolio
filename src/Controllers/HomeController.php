@@ -18,23 +18,27 @@ class HomeController
     $this->mailer = $mailer;
   }
 
-  public function view(Request $request, Response $response, array $args)
+  public function index(Request $request, Response $response, array $args)
   {
+    $args['pageTitle'] = "Joshua Flood";
     return $this->renderer->render($response, 'index.phtml', $args);
   }
 
-  public function about(Request $request, Response $response, array $args)
+  public function bio(Request $request, Response $response, array $args)
   {
-    return $this->renderer->render($response, 'about.phtml', $args);
+    $args['pageTitle'] = "Bio | Joshua Flood";
+    return $this->renderer->render($response, 'bio.phtml', $args);
   }
 
-  public function portfolio(Request $request, Response $response, array $args)
+  public function showcase(Request $request, Response $response, array $args)
   {
-    return $this->renderer->render($response, 'portfolio.phtml', $args);
+    $args['pageTitle'] = "Showcase | Joshua Flood";
+    return $this->renderer->render($response, 'showcase.phtml', $args);
   }
 
   public function contact(Request $request, Response $response, array $args)
   {
+    $args['pageTitle'] = "Contact | Joshua Flood";
     return $this->renderer->render($response, 'contact.phtml', $args);
   }
 

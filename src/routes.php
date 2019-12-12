@@ -4,11 +4,11 @@
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 
-$app->get('/', 'HomeController:view');
+$app->get('/', 'HomeController:index');
 
-$app->get('/about', 'HomeController:about');
+$app->get('/bio', 'HomeController:bio');
 
-$app->get('/portfolio', 'HomeController:portfolio');
+$app->get('/showcase', 'HomeController:showcase');
 
 $app->get('/contact', 'HomeController:contact');
 

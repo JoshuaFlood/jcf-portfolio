@@ -20,6 +20,10 @@ header {
   height: 77px;
 }
 
+main {
+  padding-top: 63px;
+}
+
 footer {
   height: 77px;
   color: #222;
@@ -37,8 +41,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .brand-container {
+  margin-top: 23px;
   padding: 12px;
   text-align: center;
+  font-size: 2rem;
 }
 
 header ul {
@@ -58,7 +64,7 @@ header ul {
 [data-menu-component] {
   position: relative;
   display: block;
-  margin: 12px auto 0;
+  margin: 23px auto 0;
   width: 300px;
   height: 48px;
 }
@@ -85,6 +91,16 @@ label {
   color: #111;
   padding: 0.33rem 0;
   text-decoration: none;
+}
+
+[data-opens-menu] {
+  padding: 1.4rem 0 0.33rem;
+  height: 2.6rem;
+  font-size: 1.6em;
+}
+
+[role="menu"] a {
+  font-size: 1.6em;
 }
 
 [type="checkbox"]:focus + [data-opens-menu], [role="menu"] a:focus {
@@ -134,7 +150,7 @@ label {
 
 .social-container {
   display: block;
-  margin: 42px 0 0;
+  margin: 54px 0 0;
   width: 100%;
   height: 80px;
 }
@@ -171,13 +187,13 @@ label {
 }
 
 .title {
-  padding: 0 72px 0 0;
+  padding: 0 72px 0;
+  text-align: right;
 }
 
 .title h2 {
   font-size: 72px;
   line-height: 38px;
-  text-align: right;
   color: #3F9E9B;
 }
 
@@ -186,8 +202,20 @@ label {
   color: #EEE;
 }
 
+header .title {
+  text-align: center;
+}
+
+header .title h2 {
+  font-size: 80px;
+}
+
+header .title h2 span {
+  font-size: 82px;
+}
+
 .sub-title {
-  margin-top: 42px;
+  margin-top: 23px;
   padding-left: 36px;
   font-size: 28px;
   color: #6f9e9d;
@@ -196,4 +224,14 @@ label {
 #copyright {
   padding-top: 23px;
   text-align: center;
+}
+
+.feather {
+  width: 54px;
+  height: 54px;
+  stroke: black;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }

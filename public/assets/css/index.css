@@ -14,11 +14,11 @@
   width: 100%;
 }
 
-.skills-title {
+.attribute-title {
   padding-left: 12%;
 }
 
-.skills-list ul {
+.attribute-list ul {
   display: block;
   margin: 12px auto 18px;
   padding: 12px;
@@ -28,11 +28,11 @@
   border-radius: 18px;
 }
 
-.skills-list ul li {
+.attribute-list ul li {
   display: inline-block;
   margin: 6px 8px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   list-style: none;
 }
 
@@ -42,8 +42,11 @@
   vertical-align: middle;
 }
 
-.skills-list ul li img {
+.attribute-list ul li p,
+.attribute-list ul li img {
   vertical-align: middle;
-  max-width: 88px;
-  max-height: 88px;
+  text-align: center;
+  margin: auto;
+  max-width: 108px;
+  max-height: 108px;
 }

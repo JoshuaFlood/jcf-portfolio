@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Joshua Flood</title>
+  <title><?php echo $pageTitle; ?></title>
   <meta name="description" content="Joshua Flood's Portfolio">
   <meta name="author" content="Joshua Flood">
 
@@ -12,13 +12,16 @@
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/showcase.css">
   <link rel="stylesheet" type="text/css" href="assets/css/contact.css">
 </head>
 <body>
   <div id="wrapper">
     <header>
       <div class="brand-container">
-        <h1>PORTFOLIO</h1>
+        <div class="title">
+          <h2>Joshua<br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flood</span></h2>
+        </div>
       </div>
 
       <div data-menu-component>
@@ -27,12 +30,10 @@
                aria-haspopup="true"
                id="toggle"
                class="vh">
-        <label for="toggle"data-opens-menu>
-          <p>
+        <label for="toggle" data-opens-menu>
             &#x2630; Menu
             <span class="vh expanded-text">expanded</span>
             <span class="vh collapsed-text">collapsed</span>
-          </p>
         </label>
         <div role="menu"
              data-menu-origin="left"
@@ -44,11 +45,11 @@
             </li>
             <li role="menuitem"
                 tabindex="-1">
-              <a href="/about"><p>About</p></a>
+              <a href="/bio"><p>Bio</p></a>
             </li>
             <li role="menuitem"
                 tabindex="-1">
-              <a href="/portfolio"><p>Portfolio</p></a>
+              <a href="/showcase"><p>Showcase</p></a>
             </li>
             <li role="menuitem"
                 tabindex="-1">
@@ -60,18 +61,26 @@
       <div class="social-container">
         <div>
           <ul>
-            <li><a href="https://github.com/JoshuaFlood">
-              <img src="assets/img/social/github.png" alt="My GitHub"/>
-            </a></li>
-            <li><a href="https://codepen.io/JoshuaFlood">
-              <img src="assets/img/social/codepen.png" alt="My CodePen" />
-            </a></li>
-            <li><a href="https://www.instagram.com/muck.ee/">
-              <img src="assets/img/social/ig.png" alt="My Instagram"/>
-            </a></li>
-            <li><a href="https://www.youtube.com/channel/UCX-Xy84qTurBB0jkZ8HQ2fQ">
-              <img src="assets/img/social/yt.png" alt="My YouTube" />
-            </a></li>
+            <li>
+              <a href="https://github.com/JoshuaFlood">
+6                <img src="assets/img/social/github.png" alt="My GitHub" />
+              </a>
+            </li>
+            <li>
+              <a href="https://codepen.io/JoshuaFlood">
+                <img src="assets/img/social/codepen.png" alt="My CodePen" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/muck.ee/">
+                <img src="assets/img/social/ig.png" alt="My Instagram"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UCX-Xy84qTurBB0jkZ8HQ2fQ">
+                <img src="assets/img/social/yt.png" alt="My YouTube" />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
