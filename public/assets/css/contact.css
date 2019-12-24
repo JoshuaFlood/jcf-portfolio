@@ -1,11 +1,165 @@
 /* CSS Stylesheet */
 
+@keyframes flashIn {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 12px #80FFFD;
+  }
+  42% {
+    opacity: 0.5;
+    text-shadow: 0 0 18px #80FFFD;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
+.contact-container .title-container .sub-title span {
+  opacity: 0;
+  animation: flashIn 0.1s forwards;
+}
+
+.contact-container .title-container .sub-title span:nth-child(1) {
+  animation-delay: 0.12s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(2) {
+  animation-delay: 0.23s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(3) {
+  animation-delay: 0.33s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(5) {
+  animation-delay: 0.46s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(6) {
+  animation-delay: 0.54s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(7) {
+  animation-delay: 0.63s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(8) {
+  animation-delay: 0.72s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(9) {
+  animation-delay: 0.88s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(10) {
+  animation-delay: 0.96s;
+}
+
+.contact-container .title-container .sub-title span:nth-child(11) {
+  animation-delay: 1.13s;
+}
+
 .contact-form-container {
-  margin: 23px auto 0;
+  margin: 23px auto 46px;
   padding: 12px 23px;
   width: 740px;
-  border: 1px solid #222;
+  height: 600px;
+  border: 1px solid #EEE;
   border-radius: 13px;
+  animation-name: stretchDown;
+  animation-duration: 0.6s;
+}
+
+@keyframes stretchDown {
+  0% {
+    height: 88px;
+  }
+  40% {
+    height: 88px;
+  }
+}
+.contact-form-container > *:not(:nth-child(3)) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+}
+
+.contact-form-container > *:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.contact-form-container > *:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.contact-form-container > *:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.contact-form-container form *:nth-child(1),
+.contact-form-container form *:nth-child(2) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 0.8s;
+}
+
+.contact-form-container form *:nth-child(4),
+.contact-form-container form *:nth-child(5) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 1.0s;
+}
+
+.contact-form-container form *:nth-child(7),
+.contact-form-container form *:nth-child(8) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 1.2s;
+}
+
+.contact-form-container form *:nth-child(10),
+.contact-form-container form *:nth-child(11) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 1.4s;
+}
+
+.contact-form-container form *:nth-child(13),
+.contact-form-container form *:nth-child(14) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 1.6s;
+}
+
+.contact-form-container form *:nth-child(18) {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.contact-form-container hr {
+  visibility: hidden;
+  margin-left: 0;
+  width: 0;
+  animation: growRight 1s forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes growRight {
+  100% {
+    visibility: visible;
+    width: 100%;
+  }
 }
 
 .contact-form-container p {
@@ -14,7 +168,6 @@
 
 .contact-form-container form {
   margin-top: 36px;
-  border-top: 1px solid #222;
   padding: 23px 0;
 }
 
@@ -51,7 +204,7 @@
   width: 53%;
 }
 
-.contact-form-container form input#submit {
+.contact-form-container form #submit {
   display: block;
   margin: 0 auto;
   width: 42%;
