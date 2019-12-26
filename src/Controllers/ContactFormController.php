@@ -25,6 +25,7 @@ class ContactFormController
 
     // Check for robots.
     if($data['roboto'] !== "") {
+      $args['pageTitle'] = "Contact | Joshua Flood";
       // Return robots to contact page without performing any action.
       return $this->renderer->render($response, 'contact.phtml', $args);
     }
@@ -60,11 +61,13 @@ class ContactFormController
       if(!$this->mailer->send()) {
         // Return generic error message to user if there is a problem sending
         // mail. This error should be logged using monolog.
+        $args['pageTitle'] = "Contact | Joshua Flood";
         $args['error']['general'] = "We're having trouble with our mail servers
           at the moment.  Please try again later, or contact me using the social
           media links at the top of the page. Message: " . $this->mailer->ErrorInfo . ".";
         return $this->renderer->render($response, 'contact.phtml', $args);
       } else {
+        $args['pageTitle'] = "Success | Joshua Flood";
         // Redirect user to success page.
         return $this->renderer->render($response, 'contact-success.phtml', $args);
       }
