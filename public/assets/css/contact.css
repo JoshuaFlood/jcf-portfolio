@@ -1,165 +1,158 @@
 /* CSS Stylesheet */
 
-@keyframes flashIn {
-  0% {
-    opacity: 0;
-    text-shadow: 0 0 12px #80FFFD;
-  }
-  42% {
-    opacity: 0.5;
-    text-shadow: 0 0 18px #80FFFD;
-  }
-  100% {
-    opacity: 1;
-    text-shadow: none;
-  }
-}
-
 .contact-container .title-container .sub-title span {
   opacity: 0;
-  animation: flashIn 0.1s forwards;
+  -webkit-animation: flashBlue 0.1s forwards,
+             resetOpacity 0.1s forwards;
+          animation: flashBlue 0.1s forwards,
+             resetOpacity 0.1s forwards;
 }
 
 .contact-container .title-container .sub-title span:nth-child(1) {
-  animation-delay: 0.12s;
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(2) {
-  animation-delay: 0.23s;
+  -webkit-animation-delay: 0.23s;
+          animation-delay: 0.23s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(3) {
-  animation-delay: 0.33s;
+  -webkit-animation-delay: 0.33s;
+          animation-delay: 0.33s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(4) {
-  animation-delay: 0.42s;
+  -webkit-animation-delay: 0.42s;
+          animation-delay: 0.42s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(5) {
-  animation-delay: 0.46s;
+  -webkit-animation-delay: 0.46s;
+          animation-delay: 0.46s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(6) {
-  animation-delay: 0.54s;
+  -webkit-animation-delay: 0.54s;
+          animation-delay: 0.54s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(7) {
-  animation-delay: 0.63s;
+  -webkit-animation-delay: 0.63s;
+          animation-delay: 0.63s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(8) {
-  animation-delay: 0.72s;
+  -webkit-animation-delay: 0.72s;
+          animation-delay: 0.72s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(9) {
-  animation-delay: 0.88s;
+  -webkit-animation-delay: 0.88s;
+          animation-delay: 0.88s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(10) {
-  animation-delay: 0.96s;
+  -webkit-animation-delay: 0.96s;
+          animation-delay: 0.96s;
 }
 
 .contact-container .title-container .sub-title span:nth-child(11) {
-  animation-delay: 1.13s;
+  -webkit-animation-delay: 1.13s;
+          animation-delay: 1.13s;
 }
 
 .contact-form-container {
   margin: 23px auto 46px;
   padding: 12px 23px;
-  width: 740px;
-  height: 600px;
+  width: 738px;
+  height: 598px;
+  -webkit-transform: translateY(0.14);
+      -ms-transform: translateY(0.14);
+          transform: translateY(0.14);
   border: 1px solid #EEE;
   border-radius: 13px;
-  animation-name: stretchDown;
-  animation-duration: 0.6s;
+  -webkit-animation: resetTransform 0.6s;
+          animation: resetTransform 0.6s;
 }
 
-@keyframes stretchDown {
-  0% {
-    height: 88px;
-  }
-  40% {
-    height: 88px;
-  }
-}
-.contact-form-container > *:not(:nth-child(3)) {
+.contact-form-container > p,
+.contact-form-container > span,
+.contact-form-container > form {
   opacity: 0;
-  animation: fadeIn 0.4s forwards;
+  -webkit-animation: resetOpacity 0.4s forwards;
+          animation: resetOpacity 0.4s forwards;
 }
 
-.contact-form-container > *:nth-child(1) {
-  animation-delay: 0.3s;
+.contact-form-container > p {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
-.contact-form-container > *:nth-child(2) {
-  animation-delay: 0.6s;
+.contact-form-container > span {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
-.contact-form-container > *:nth-child(4) {
-  animation-delay: 0.6s;
+.contact-form-container > form {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
-.contact-form-container form *:nth-child(1),
-.contact-form-container form *:nth-child(2) {
+.contact-form-container form label,
+.contact-form-container form input,
+.contact-form-container form textarea {
   opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 0.8s;
 }
 
-.contact-form-container form *:nth-child(4),
-.contact-form-container form *:nth-child(5) {
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 1.0s;
+.contact-form-container form label:nth-of-type(1),
+.contact-form-container form input:nth-of-type(1) {
+  -webkit-animation: resetOpacity 0.4s forwards 0.8s;
+          animation: resetOpacity 0.4s forwards 0.8s;
 }
 
-.contact-form-container form *:nth-child(7),
-.contact-form-container form *:nth-child(8) {
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 1.2s;
+.contact-form-container form label:nth-of-type(2),
+.contact-form-container form input:nth-of-type(2) {
+  -webkit-animation: resetOpacity 0.4s forwards 1s;
+          animation: resetOpacity 0.4s forwards 1s;
 }
 
-.contact-form-container form *:nth-child(10),
-.contact-form-container form *:nth-child(11) {
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 1.4s;
+.contact-form-container form label:nth-of-type(3),
+.contact-form-container form input:nth-of-type(3) {
+  -webkit-animation: resetOpacity 0.4s forwards 1.2s;
+          animation: resetOpacity 0.4s forwards 1.2s;
 }
 
-.contact-form-container form *:nth-child(13),
-.contact-form-container form *:nth-child(14) {
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 1.6s;
+.contact-form-container form label:nth-of-type(4),
+.contact-form-container form textarea {
+  -webkit-animation: resetOpacity 0.4s forwards 1.4s;
+          animation: resetOpacity 0.4s forwards 1.4s;
 }
 
-.contact-form-container form *:nth-child(18) {
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
-  animation-delay: 1.8s;
+.contact-form-container form label:nth-of-type(5),
+.contact-form-container form input:nth-of-type(4) {
+  -webkit-animation: resetOpacity 0.4s forwards 1.6s;
+          animation: resetOpacity 0.4s forwards 1.6s;
 }
 
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
-  }
+.contact-form-container form input[name="submit"] {
+  display: block;
+  margin: 0 auto;
+  width: 42%;
+  -webkit-animation: resetOpacity 0.4s forwards 1.8s;
+          animation: resetOpacity 0.4s forwards 1.8s;
 }
 
 .contact-form-container hr {
-  visibility: hidden;
-  margin-left: 0;
-  width: 0;
-  animation: growRight 1s forwards;
-  animation-delay: 0.1s;
-}
-
-@keyframes growRight {
-  100% {
-    visibility: visible;
-    width: 100%;
-  }
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: resetTransform 1s forwards 0.1s;
+          animation: resetTransform 1s forwards 0.1s;
 }
 
 .contact-form-container p {
@@ -202,10 +195,4 @@
 .contact-form-container form span.contact-error {
   margin: 0 37% 13px;
   width: 53%;
-}
-
-.contact-form-container form #submit {
-  display: block;
-  margin: 0 auto;
-  width: 42%;
 }

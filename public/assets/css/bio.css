@@ -1,32 +1,33 @@
 /* CSS Stylesheet */
 
-@keyframes fadeInFast {
-  0% {
-    opacity: 0;
-  }
-  27% {
-    opacity: 0;
-  }
-  66% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .bio-container .sub-title p {
-  animation-name: fadeInFast;
-  animation-duration: 1.2s;
-}
-
-.bio-container .content-container {
-  padding: 0 42px;
-}
-
-.bio-container .content-container > * {
   opacity: 0;
-  animation: fadeInFast 1.2s forwards;
-  animation-delay: 0.8s;
+  -webkit-animation: resetOpacity 9s forwards 0.3s;
+          animation: resetOpacity 9s forwards 0.3s;
 }
 
+.bio-container .content-container > p {
+  opacity: 0;
+  -webkit-animation: resetOpacity 9s forwards 0.3s;
+          animation: resetOpacity 9s forwards 0.3s;
+}
+
+.bio-container .content-container > p:first-child(1) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.bio-container .content-container > p:first-child(2) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.bio-container .content-container > p:first-child(3) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.bio-container .content-container > p:first-child(4) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
