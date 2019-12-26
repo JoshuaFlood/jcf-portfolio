@@ -12,4 +12,4 @@ $app->get('/showcase', 'HomeController:showcase');
 
 $app->get('/contact', 'HomeController:contact');
 
-$app->post('/contact', 'HomeController:contactsubmit');
+$app->post('/contact', 'ContactFormController:submit');
